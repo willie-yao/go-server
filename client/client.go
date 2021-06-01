@@ -4,10 +4,12 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 )
 
 func main() {
-	resp, err := http.Get("http://localhost:8080")
+	server := os.Getenv("SERVER_ADDR")
+	resp, err := http.Get(server)
 	if err != nil {
 		log.Fatalln(err)
 	}
