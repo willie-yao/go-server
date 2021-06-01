@@ -8,6 +8,8 @@ import (
 
 func main() {
 	http.HandleFunc("/", handler)
+
+	// Start server on port 8080
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
